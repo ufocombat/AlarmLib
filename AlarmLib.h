@@ -6,12 +6,17 @@
 
 String DayOfWeek(DateTime date);
 String Norm2Str(int value);
+
 String Date2Str(DateTime date);
+String Date2StrFull(DateTime date);
+
 String Time2Str(DateTime _time);
+String Time2StrDDMM(DateTime _time,boolean colon);
 
 class Alarm {
 public:
     Alarm (uint16_t minutes=0);
+    Alarm (String  mm_hh);
     uint8_t hour() const        { return hh; }
     uint8_t minute() const      { return mm; }
     uint16_t minutes() const      { return _minutes; }
