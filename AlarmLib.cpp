@@ -20,21 +20,39 @@ String Date2Str(DateTime date)
   return (String)date.year()+"."+(String)date.month()+"."+(String)date.day(); 
 }
 
-String Date2StrFull(DateTime date)
+String Date2StrWeek(DateTime date)
 {
-  return Date2Str(date)+" "+DayOfWeek(date)+" "+Time2Str(date); 
+  return Date2Str(date)+" "+DayOfWeek(date); 
 }
 
+String Date2StrFull(DateTime date)
+{
+  return Date2StrWeek(date)+" "+Time2Str(date); 
+}
 
-
-String Time2StrDDMM(DateTime _time,boolean colon)
+String Time2StrHHMM(DateTime _time,boolean colon)
 {
   return Norm2Str(_time.hour())+(colon?":":" ")+Norm2Str(_time.minute());
+}
+
+String TimeSpan2hMM(TimeSpan span)
+{
+  return (String)span.hours()+":"+Norm2Str(span.minutes());
 }
 
 String Time2Str(DateTime _time)
 {  
   return Norm2Str(_time.hour())+":"+Norm2Str(_time.minute())+":"+Norm2Str(_time.second());
+}
+
+String Min2hMM(uint16_t minutes)
+{   
+  return (int)(minutes / 60)+":"+Norm2Str(minutes % 60);
+}
+
+String Min2HHMM(uint16_t minutes)
+{   
+  return Norm2Str((int)(minutes / 60))+":"+Norm2Str(minutes % 60);
 }
 
 Alarm::Alarm (uint16_t minutes)

@@ -8,10 +8,16 @@ String DayOfWeek(DateTime date);
 String Norm2Str(int value);
 
 String Date2Str(DateTime date);
+String Date2StrWeek(DateTime date);
 String Date2StrFull(DateTime date);
 
 String Time2Str(DateTime _time);
-String Time2StrDDMM(DateTime _time,boolean colon);
+String Time2StrHHMM(DateTime _time,boolean colon);
+
+String TimeSpan2hMM(TimeSpan span);
+
+String Min2HHMM(uint16_t minutes);
+String Min2hMM(uint16_t minutes);
 
 class Alarm {
 public:
