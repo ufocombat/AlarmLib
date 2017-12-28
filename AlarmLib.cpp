@@ -19,7 +19,14 @@ String Date2Str(DateTime date)
 {
   return (String)date.year()+"."+(String)date.month()+"."+(String)date.day(); 
 }
-
+uint16_t Date_minutes(DateTime date)
+{
+ return date.hour()*60+date.minute();
+}
+uint16_t Date_seconds(DateTime date)
+{
+ return date.hour()*360+date.minute()*60+date.second();
+}
 String Date2StrWeek(DateTime date)
 {
   return Date2Str(date)+" "+DayOfWeek(date); 
@@ -47,7 +54,7 @@ String Time2Str(DateTime _time)
 
 String Min2hMM(uint16_t minutes)
 {   
-  return (int)(minutes / 60)+":"+Norm2Str(minutes % 60);
+  return (String)((int)(minutes / 60))+":"+Norm2Str(minutes % 60);
 }
 
 String Min2HHMM(uint16_t minutes)

@@ -11,6 +11,10 @@ String Date2Str(DateTime date);
 String Date2StrWeek(DateTime date);
 String Date2StrFull(DateTime date);
 
+uint16_t Date_minutes(DateTime date);
+uint16_t Date_seconds(DateTime date);
+
+
 String Time2Str(DateTime _time);
 String Time2StrHHMM(DateTime _time,boolean colon);
 
