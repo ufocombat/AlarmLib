@@ -41,7 +41,6 @@ String Time2StrHHMM(DateTime _time,boolean colon)
 {
   return Norm2Str(_time.hour())+(colon?":":" ")+Norm2Str(_time.minute());
 }
-
 String TimeSpan2hMM(TimeSpan span)
 {
   return (String)span.hours()+":"+Norm2Str(span.minutes());
