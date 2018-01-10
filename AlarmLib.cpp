@@ -17,7 +17,7 @@ String Norm2Str(int value)
 
 String Date2Str(DateTime date)
 {
-  return (String)date.year()+"."+(String)date.month()+"."+(String)date.day(); 
+  return (String)date.year()+"."+Norm2Str(date.month())+"."+Norm2Str(date.day()); 
 }
 uint16_t Date_minutes(DateTime date)
 {
